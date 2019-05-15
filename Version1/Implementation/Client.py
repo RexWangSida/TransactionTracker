@@ -10,12 +10,12 @@ def start():
     window.title("Sneakers Tradings Tracker")
     window.geometry("1000x1000")
     #above is structure, code starts here
-    background_image = PhotoImage(file=".\image.png")
+    background_image = PhotoImage(file="image.png")
     background_label = Label(window,image=background_image)
     background_label.place(relwidth=1,relheight=1)
     #------------file read
     def READ():
-        f = open(".\inventory.txt","r")
+        f = open("inventory.txt","r")
         lines = f.readlines()
         if lines == None:
             data = inventory([])  
@@ -40,7 +40,7 @@ def start():
     #------------file write
 
     def WRITE(data):
-        f = open(".\inventory.txt","w")
+        f = open("inventory.txt","w")
         seq = data.toSeq()
         for i in seq:
             f.write(str(i.get_name())+"\n")
